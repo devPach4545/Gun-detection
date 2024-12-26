@@ -1,0 +1,35 @@
+[ 2024-12-25 18:44:18,500 ] werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.233:5000
+[ 2024-12-25 18:44:18,501 ] werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-12-25 18:44:23,762 ] werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 18:44:23] "GET / HTTP/1.1" 200 -
+[ 2024-12-25 18:44:34,097 ] werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 18:44:34] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[ 2024-12-25 18:44:34,103 ] werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/serving.py", line 333, in execute
+    for data in application_iter:
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+           ^^^^^^^^^^^^
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+TypeError: 'FileNotFoundError' object is not iterable
+[ 2024-12-25 18:44:55,520 ] werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 18:44:55] "GET / HTTP/1.1" 200 -
+[ 2024-12-25 18:45:41,096 ] werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 18:45:41] "GET / HTTP/1.1" 200 -
+[ 2024-12-25 18:45:51,260 ] werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 18:45:51] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[ 2024-12-25 18:45:51,261 ] werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/serving.py", line 333, in execute
+    for data in application_iter:
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+           ^^^^^^^^^^^^
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+TypeError: 'FileNotFoundError' object is not iterable
+[ 2024-12-25 18:46:28,496 ] werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 18:46:28] "[33mGET /installHook.js.map HTTP/1.1[0m" 404 -

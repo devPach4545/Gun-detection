@@ -1,0 +1,25 @@
+[ 2024-12-25 19:23:19,350 ] werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.233:5000
+[ 2024-12-25 19:23:19,351 ] werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-12-25 19:23:24,320 ] werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 19:23:24] "GET / HTTP/1.1" 200 -
+[ 2024-12-25 19:23:31,659 ] root - INFO - getting image as json
+[ 2024-12-25 19:23:31,660 ] root - INFO - Image decoded
+[ 2024-12-25 19:23:31,660 ] root - INFO - Predicting image
+[ 2024-12-25 19:23:34,415 ] root - INFO - Encoding image
+[ 2024-12-25 19:23:34,415 ] root - INFO - Image prediction completed and now gonna return the image
+[ 2024-12-25 19:23:34,426 ] werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 19:23:34] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[ 2024-12-25 19:23:34,430 ] werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/serving.py", line 333, in execute
+    for data in application_iter:
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+           ^^^^^^^^^^^^
+  File "/home/dpach/.conda/envs/gun_detection/lib/python3.11/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+TypeError: 'AttributeError' object is not iterable
+[ 2024-12-25 19:24:59,539 ] werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 19:24:59] "[33mGET /installHook.js.map HTTP/1.1[0m" 404 -
