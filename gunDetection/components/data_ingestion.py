@@ -39,6 +39,7 @@ class DataIngestion:
             with zipfile.ZipFile(zip_file_path, "r") as zip_ref:
                 zip_ref.extractall(feature_store_path)
             logging.info(f"Data unzipped to {feature_store_path}")
+            return feature_store_path
         except Exception as e:
             raise AppException(e, sys)
         

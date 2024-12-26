@@ -1,0 +1,13 @@
+[ 2024-12-25 11:13:33,670 ] root - INFO - Initiating data ingestion
+[ 2024-12-25 11:13:33,670 ] root - INFO - Downloading data from https://drive.google.com/file/d/1zd2yFehwEtZ5DHJUEXGcQUST1_LXPDk1/view?usp=sharing to artifacts/data_ingestion/data.zip
+[ 2024-12-25 11:13:38,279 ] root - INFO - Data downloaded to artifacts/data_ingestion/data.zip
+[ 2024-12-25 11:13:38,280 ] root - INFO - Unzipping data to artifacts/data_ingestion/feature_store
+[ 2024-12-25 11:13:38,317 ] root - INFO - Data unzipped to artifacts/data_ingestion/feature_store
+[ 2024-12-25 11:13:38,317 ] root - INFO - Data ingestion completed. Artifacts: DataIngestionArtifacts(data_zip_file_path='artifacts/data_ingestion/data.zip', feature_store_file_path='artifacts/data_ingestion/feature_store')
+[ 2024-12-25 11:13:38,317 ] root - INFO - Data ingestion completed
+[ 2024-12-25 11:13:38,317 ] root - INFO - Initiating data validation
+[ 2024-12-25 11:13:38,317 ] root - INFO - Validation passed. All files present
+[ 2024-12-25 11:13:38,317 ] root - INFO - Data validation completed. Artifacts: DataValidationArtifacts(val_status=True)
+[ 2024-12-25 11:13:38,318 ] root - INFO - Data validation completed
+[ 2024-12-25 11:13:38,319 ] root - INFO - Initiating model training
+[ 2024-12-25 11:13:38,319 ] root - INFO - Initiating model training
