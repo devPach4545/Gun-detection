@@ -1,0 +1,20 @@
+[ 2024-12-28 09:52:06,592 ] werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.233:5000
+[ 2024-12-28 09:52:06,592 ] werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-12-28 09:52:22,914 ] werkzeug - INFO - 127.0.0.1 - - [28/Dec/2024 09:52:22] "GET / HTTP/1.1" 200 -
+[ 2024-12-28 09:52:31,169 ] root - INFO - Getting image as JSON
+[ 2024-12-28 09:52:31,174 ] root - INFO - Image decoded
+[ 2024-12-28 09:52:31,174 ] root - INFO - Predicting image
+[ 2024-12-28 09:52:34,648 ] root - INFO - Encoding image
+[ 2024-12-28 09:52:34,649 ] root - INFO - Image prediction completed and returning the result
+[ 2024-12-28 09:52:34,655 ] werkzeug - INFO - 127.0.0.1 - - [28/Dec/2024 09:52:34] "POST /predict HTTP/1.1" 200 -
+[ 2024-12-28 09:52:42,079 ] werkzeug - INFO - 127.0.0.1 - - [28/Dec/2024 09:52:42] "GET / HTTP/1.1" 200 -
+[ 2024-12-28 09:52:46,435 ] werkzeug - INFO - 127.0.0.1 - - [28/Dec/2024 09:52:46] "[33mGET /installHook.js.map HTTP/1.1[0m" 404 -
+[ 2024-12-28 09:53:24,109 ] root - INFO - Getting image as JSON
+[ 2024-12-28 09:53:24,109 ] root - INFO - Image decoded
+[ 2024-12-28 09:53:24,110 ] root - INFO - Predicting image
+[ 2024-12-28 09:53:27,173 ] root - INFO - Encoding image
+[ 2024-12-28 09:53:27,173 ] root - INFO - Image prediction completed and returning the result
+[ 2024-12-28 09:53:27,177 ] werkzeug - INFO - 127.0.0.1 - - [28/Dec/2024 09:53:27] "POST /predict HTTP/1.1" 200 -

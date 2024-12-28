@@ -58,5 +58,4 @@ def predictRoute():
 if __name__ == "__main__":
     CLIENT = ClientApp()
     app.run(host=APP_HOST, port=APP_PORT)
-    # test encode
-    
+   
