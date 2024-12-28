@@ -26,7 +26,7 @@ jobs:
       
       - name: Install Dependencies
         run: |
-          pip install -r requirement.txt
+          pip install --no-cache-dir -r requirement.txt
 
       - name: Deploy to Vercel
         env:
