@@ -5,7 +5,7 @@ from gunDetection.exception import AppException
 from gunDetection.entity.config_entity import ModelTrainderConfig
 from gunDetection.utils.main_utils import read_yam_file
 from gunDetection.entity.artifacts_entity import ModelTrainerArtifacts
-from ultralytics import YOLO
+
 
 class ModelTrainer:
     def __init__(self, model_trainer_config: ModelTrainderConfig):
@@ -21,7 +21,7 @@ class ModelTrainer:
             model_config_file_name = self.model_trainer_config.pretrained_weight_name.split(".")[0]
             print(model_config_file_name)
 
-            model = YOLO('jameslahm/yolov10s.pt')
+            #model = YOLO('jameslahm/yolov10s.pt')
             # train if you have resources
             '''
             model.train(

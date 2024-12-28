@@ -1,9 +1,17 @@
-FROM python:3.11-slim-buster
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
+
+# Set the working directory in the container
 WORKDIR /app
+
+# Copy the current directory contents into the container
 COPY . /app
 
-RUN apt-get update -y && apt-get install awscli -y
+# Install any needed dependencies
+RUN pip install --no-cache-dir -r requirement.txt
 
-RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 unzip -y && pip install -r requirement.txt
+# Expose the port the app runs on
+EXPOSE 8000
 
-CMD [ "python3", "app.py" ]
+# Run the application
+CMD ["python", "app.py"]
