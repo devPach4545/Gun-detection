@@ -19,18 +19,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up python
+      - name: Set up Python
         uses: actions/setup-python@v4
-        with: python-verison:"3.9"
+        with:
+          python-version: "3.9"
       
       - name: Install Dependencies
         run: |
           pip install -r requirement.txt
 
-      - name: Deplpy to vercel
+      - name: Deploy to Vercel
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN}}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: | 
           npm install -g vercel
           vercel deploy --prod --token=$VERCEL_TOKEN --confirm
-      
