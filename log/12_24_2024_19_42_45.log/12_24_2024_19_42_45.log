@@ -1,7 +1,0 @@
-[ 2024-12-24 19:42:45,520 ] root - INFO - Initiating data ingestion
-[ 2024-12-24 19:42:45,520 ] root - INFO - Downloading data from https://drive.google.com/file/d/1zd2yFehwEtZ5DHJUEXGcQUST1_LXPDk1/view?usp=sharing to artifacts/data_ingestion/data.zip
-[ 2024-12-24 19:42:49,815 ] root - INFO - Data downloaded to artifacts/data_ingestion/data.zip
-[ 2024-12-24 19:42:49,815 ] root - INFO - Unzipping data to artifacts/data_ingestion/feature_store
-[ 2024-12-24 19:42:49,873 ] root - INFO - Data unzipped to artifacts/data_ingestion/feature_store
-[ 2024-12-24 19:42:49,873 ] root - INFO - Data ingestion completed. Artifacts: DataIngestionArtifacts(data_zip_file_path='artifacts/data_ingestion/data.zip', feature_store_file_path=None)
-[ 2024-12-24 19:42:49,873 ] root - INFO - Data ingestion completed

@@ -1,4 +1,3 @@
-from gunDetection.logger import logging
 from gunDetection.exception import AppException
 import sys
 import os.path
@@ -10,7 +9,6 @@ import base64
 def read_yam_file(file_path: str) -> dict:
     try:
         with open('file_path', 'r') as file:
-            logging.info(f"Reading file {file_path}")
             return yaml.safe_load(file)
     except Exception as e:
         raise AppException(e, sys) from e
@@ -24,7 +22,6 @@ def write_yam_file(file_path: str, content: object, replace: bool) -> None:
 
         with open('file_path', 'w') as file:
             yaml.dump(content, file)
-            logging.info(f"Writing file {file_path}")
     except Exception as e:
         raise AppException(e, sys) from e
     

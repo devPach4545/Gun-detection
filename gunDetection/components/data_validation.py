@@ -4,7 +4,6 @@ import sys
 import zipfile
 import gdown
 from gunDetection.entity.config_entity import DataIngestionConfig, DataValidationConfig
-from gunDetection.logger import logging
 from gunDetection.exception import AppException
 from gunDetection.entity.artifacts_entity import DataIngestionArtifacts, DataValidationArtifacts
 
@@ -29,13 +28,11 @@ class DataValidation:
                     os.makedirs(self.data_validation_config.data_val_dir, exist_ok=True)
                     with open(self.data_validation_config.data_val_status_file, "w") as f:
                         f.write("false")
-                    logging.error(f"Validation failed. Missing file: {file}")
                 else:
                     val_status = True
                     os.makedirs(self.data_validation_config.data_val_dir, exist_ok=True)
                     with open(self.data_validation_config.data_val_status_file, "w") as f:
                         f.write("true")
-                        logging.info(f"Validation passed. All files present")
                 return val_status
         except Exception as e:
             raise AppException(e, sys)
@@ -45,7 +42,6 @@ class DataValidation:
         try:
             val_status = self.val_all_files()
             data_validation_artifacts = DataValidationArtifacts(val_status=val_status)
-            logging.info(f"Data validation completed. Artifacts: {data_validation_artifacts}")
 
             if val_status:
                 shutil.copy(self.data_ingestion_artifacts.data_zip_file_path, os.getcwd())

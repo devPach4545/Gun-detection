@@ -1,6 +1,5 @@
 import os, sys
 import yaml
-from gunDetection.logger import logging
 from gunDetection.exception import AppException
 from gunDetection.entity.config_entity import ModelTrainderConfig
 from gunDetection.utils.main_utils import read_yam_file
@@ -13,7 +12,6 @@ class ModelTrainer:
 
     def initiate_model_trainer(self) -> ModelTrainerArtifacts:
         try:
-            logging.info("Initiating model training")
             os.system("unzip data.zip")
             os.system("rm data.zip")
 
@@ -39,7 +37,6 @@ class ModelTrainer:
                 # store the path of the trained model weights
                 trained_model_path="/home/dpach/Documents/GUN_DETECTION/Gun-detection/best_model_wts/best.pt"
             )
-            logging.info(f"Model weights savedf saved at {model_trainer_artifacts.trained_model_path}")
             return model_trainer_artifacts
         except Exception as e:
             raise AppException(e, sys)

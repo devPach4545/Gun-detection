@@ -3,7 +3,6 @@ from gunDetection.pipeline.training_pipeline import TrainingPipeline
 from gunDetection.utils.main_utils import decodeImage, encodeImage
 from flask import Flask, request, jsonify, render_template, Response
 from flask_cors import CORS, cross_origin
-from gunDetection.logger import logging
 from gunDetection.constant.application import *
 
 
@@ -29,17 +28,12 @@ def home():
 @cross_origin()
 def predictRoute():
     try:
-        logging.info("Getting image as JSON")
         image = request.json['image']
         decodeImage(image, CLIENT.filename)
-        logging.info("Image decoded")
 
-        logging.info("Predicting image")
         os.system("yolo detect predict model=/home/dpach/Documents/GUN_DETECTION/Gun-detection/artifacts/model_trainer/best.pt source=/home/dpach/Documents/GUN_DETECTION/Gun-detection/data/inputimg.jpg")
         
-        logging.info("Encoding image")
-        encodedImg = encodeImage("/home/dpach/Documents/GUN_DETECTION/Gun-detection/runs/detect/predict/inputimg.jpg")
-        logging.info("Image prediction completed and returning the result")
+        encodedImg = encodeImage("runs/detect/predict/inputimg.jpg")
 
         result = {"image": encodedImg}
         os.system("rm -rf /home/dpach/Documents/GUN_DETECTION/Gun-detection/runs/detect")
@@ -58,4 +52,5 @@ def predictRoute():
 if __name__ == "__main__":
     CLIENT = ClientApp()
     app.run(host=APP_HOST, port=APP_PORT)
-   
+    # test encode
+    

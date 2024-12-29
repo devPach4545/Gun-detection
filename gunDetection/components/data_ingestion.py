@@ -3,7 +3,6 @@ import sys
 import zipfile
 import gdown
 from gunDetection.entity.config_entity import DataIngestionConfig
-from gunDetection.logger import logging
 from gunDetection.exception import AppException
 from gunDetection.entity.artifacts_entity import DataIngestionArtifacts
 
@@ -21,12 +20,10 @@ class DataIngestion:
             zip_download_dir = self.data_ingestion_config.data_ingestion_dir
             os.makedirs(zip_download_dir, exist_ok=True)
             zip_file_path = os.path.join(zip_download_dir, "data.zip")
-            logging.info(f"Downloading data from {url} to {zip_file_path}")
 
             file_id = url.split("/")[-2]
             prefix = "https://drive.google.com/uc?/export=download&id="
             gdown.download(prefix + file_id, zip_file_path)
-            logging.info(f"Data downloaded to {zip_file_path}")
 
             return zip_file_path
         except Exception as e:
@@ -35,10 +32,8 @@ class DataIngestion:
     def unzip_dat(self, zip_file_path: str) -> str:
         try:
             feature_store_path = self.data_ingestion_config.feature_store_file_path
-            logging.info(f"Unzipping data to {feature_store_path}")
             with zipfile.ZipFile(zip_file_path, "r") as zip_ref:
                 zip_ref.extractall(feature_store_path)
-            logging.info(f"Data unzipped to {feature_store_path}")
             return feature_store_path
         except Exception as e:
             raise AppException(e, sys)
@@ -53,7 +48,6 @@ class DataIngestion:
                 feature_store_file_path=feature_store_path
             )
 
-            logging.info(f"Data ingestion completed. Artifacts: {data_ingestion_artifacts}")
             return data_ingestion_artifacts
         except Exception as e:
             raise AppException(e, sys)
